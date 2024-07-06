@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Topbar from "../components/Topbar/Topbar";
+import Topbar from "../components/Topbar";
 import { getData, updateGame, deleteGame } from "../api/games";
 
 const FindGames = () => {

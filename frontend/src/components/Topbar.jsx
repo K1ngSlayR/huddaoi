@@ -1,15 +1,24 @@
 import { useNavigate } from "react-router-dom";
 import "./topbar.css";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
-import SignoutButton from "../SignoutButton";
+import { handleSuccess } from "../utils";
 
 export default function Topbar() {
   const navigate = useNavigate();
 
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("loggedInUser");
+    handleSuccess("User Loggedout");
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+  };
+
   return (
-    <Navbar expand="lg" className="bg-primary navbar-dark">
+    <Navbar expand="lg" className="bg-dark navbar-dark customNavBar">
       <Container>
-        <Navbar.Brand onClick={() => navigate("/")}>Gamebook</Navbar.Brand>
+        <Navbar.Brand onClick={() => navigate("/home")}>Gamebook</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -34,7 +43,10 @@ export default function Topbar() {
 
               <NavDropdown.Divider />
               <NavDropdown.Item>
-                <SignoutButton />
+                {/*//! SIGNOUT BUTTON */}
+                <button onClick={handleSignOut} className="btn btn-danger">
+                  Sign Out
+                </button>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

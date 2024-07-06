@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { handleError, handleSuccess } from "../utils";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ const Login = () => {
           </div>
         </Form>
       </div>
+      <ToastContainer />
     </>
   );
 };

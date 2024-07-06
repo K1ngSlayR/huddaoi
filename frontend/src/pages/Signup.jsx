@@ -131,7 +131,7 @@ function Signup() {
             </span>
           </div>
         </Form>
-        {/*///! ToastContainer ta react-bootstrap theke ansi, not react-toastify */}
+
         <ToastContainer />
       </div>
     </>

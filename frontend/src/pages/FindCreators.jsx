@@ -1,7 +1,7 @@
 import { Container, Form, InputGroup, Table } from "react-bootstrap";
 import { users } from "../api/data";
 import { useState } from "react";
-import Topbar from "../components/Topbar/Topbar";
+import Topbar from "../components/Topbar";
 
 const FindCreators = () => {
   const [search_gamertag, setSearch_gamertag] = useState("");

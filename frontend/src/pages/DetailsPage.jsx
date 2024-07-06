@@ -1,6 +1,6 @@
 import { Container, Button, Card } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
-import Topbar from "../components/Topbar/Topbar";
+import Topbar from "../components/Topbar";
 
 const DetailsPage = () => {
   const location = useLocation();
